@@ -1,0 +1,123 @@
+2020-05-22 00:01:59,605 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] Scanned.
+2020-05-22 00:01:59,612 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] Waiting connection...
+2020-05-22 00:02:04,450 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] Connected.
+2020-05-22 00:02:04,451 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] createTab
+2020-05-22 00:02:05,021 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] 
+2020-05-22 00:02:05,022 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237250221] -------------- START_SENDING ----------------------
+2020-05-22 00:02:05,023 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237250221] 1/18 - 51980630766: Sending message...
+2020-05-22 00:02:12,715 ERROR com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237250221] 1/18 - 51980630766: [InvalidNumberException] - Invalid number
+2020-05-22 00:02:12,715 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237250221] Elapsed sending time: 7693 ms.
+2020-05-22 00:02:12,715 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237250221] -------------- FINISH_SENDING ----------------------
+2020-05-22 00:02:12,716 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] 
+2020-05-22 00:02:12,716 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237327162] -------------- START_SENDING ----------------------
+2020-05-22 00:02:12,716 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237327162] 2/18 - 51993121312: Sending message...
+2020-05-22 00:02:17,930 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237327162] 2/18 - 51993121312: Message sended.
+2020-05-22 00:02:17,930 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237327162] Elapsed sending time: 5214 ms.
+2020-05-22 00:02:17,930 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237327162] -------------- FINISH_SENDING ----------------------
+2020-05-22 00:02:17,930 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] 
+2020-05-22 00:02:17,931 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237379303] -------------- START_SENDING ----------------------
+2020-05-22 00:02:17,931 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237379303] 3/18 - 51964877575: Sending message...
+2020-05-22 00:02:24,344 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237379303] 3/18 - 51964877575: Message sended.
+2020-05-22 00:02:24,344 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237379303] Elapsed sending time: 6414 ms.
+2020-05-22 00:02:24,344 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237379303] -------------- FINISH_SENDING ----------------------
+2020-05-22 00:02:24,345 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] 
+2020-05-22 00:02:24,345 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237443454] -------------- START_SENDING ----------------------
+2020-05-22 00:02:24,345 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237443454] 4/18 - 51940284345: Sending message...
+2020-05-22 00:02:30,683 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237443454] 4/18 - 51940284345: Message sended.
+2020-05-22 00:02:30,683 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237443454] Elapsed sending time: 6338 ms.
+2020-05-22 00:02:30,683 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237443454] -------------- FINISH_SENDING ----------------------
+2020-05-22 00:02:30,684 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] 
+2020-05-22 00:02:30,684 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237506845] -------------- START_SENDING ----------------------
+2020-05-22 00:02:30,684 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237506845] 5/18 - 51945011040: Sending message...
+2020-05-22 00:02:37,601 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237506845] 5/18 - 51945011040: Message sended.
+2020-05-22 00:02:37,602 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237506845] Elapsed sending time: 6918 ms.
+2020-05-22 00:02:37,603 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237506845] -------------- FINISH_SENDING ----------------------
+2020-05-22 00:02:37,604 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] 
+2020-05-22 00:02:37,605 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237576056] -------------- START_SENDING ----------------------
+2020-05-22 00:02:37,606 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237576056] 6/18 - 51940284345: Sending message...
+2020-05-22 00:02:43,892 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237576056] 6/18 - 51940284345: Message sended.
+2020-05-22 00:02:43,893 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237576056] Elapsed sending time: 6288 ms.
+2020-05-22 00:02:43,893 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237576056] -------------- FINISH_SENDING ----------------------
+2020-05-22 00:02:43,893 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] 
+2020-05-22 00:02:43,894 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237638947] -------------- START_SENDING ----------------------
+2020-05-22 00:02:43,894 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237638947] 7/18 - 51993258817: Sending message...
+2020-05-22 00:02:51,427 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237638947] 7/18 - 51993258817: Message sended.
+2020-05-22 00:02:51,428 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237638947] Elapsed sending time: 7534 ms.
+2020-05-22 00:02:51,429 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237638947] -------------- FINISH_SENDING ----------------------
+2020-05-22 00:02:51,431 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] 
+2020-05-22 00:02:51,432 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237714328] -------------- START_SENDING ----------------------
+2020-05-22 00:02:51,434 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237714328] 8/18 - 51944491115: Sending message...
+2020-05-22 00:02:58,057 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237714328] 8/18 - 51944491115: Message sended.
+2020-05-22 00:02:58,057 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237714328] Elapsed sending time: 6625 ms.
+2020-05-22 00:02:58,057 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237714328] -------------- FINISH_SENDING ----------------------
+2020-05-22 00:02:58,058 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] 
+2020-05-22 00:02:58,058 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237780589] -------------- START_SENDING ----------------------
+2020-05-22 00:02:58,058 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237780589] 9/18 - 51949743300: Sending message...
+2020-05-22 00:03:04,681 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237780589] 9/18 - 51949743300: Message sended.
+2020-05-22 00:03:04,682 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237780589] Elapsed sending time: 6624 ms.
+2020-05-22 00:03:04,683 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [15901237780589] -------------- FINISH_SENDING ----------------------
+2020-05-22 00:03:04,684 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] 
+2020-05-22 00:03:04,686 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012378468510] -------------- START_SENDING ----------------------
+2020-05-22 00:03:04,687 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012378468510] 10/18 - 51995493919: Sending message...
+2020-05-22 00:03:11,293 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012378468510] 10/18 - 51995493919: Message sended.
+2020-05-22 00:03:11,293 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012378468510] Elapsed sending time: 6608 ms.
+2020-05-22 00:03:11,293 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012378468510] -------------- FINISH_SENDING ----------------------
+2020-05-22 00:03:11,293 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] 
+2020-05-22 00:03:11,293 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012379129311] -------------- START_SENDING ----------------------
+2020-05-22 00:03:11,294 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012379129311] 11/18 - 51982506186: Sending message...
+2020-05-22 00:03:17,744 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012379129311] 11/18 - 51982506186: Message sended.
+2020-05-22 00:03:17,746 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012379129311] Elapsed sending time: 6453 ms.
+2020-05-22 00:03:17,747 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012379129311] -------------- FINISH_SENDING ----------------------
+2020-05-22 00:03:17,749 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] 
+2020-05-22 00:03:17,750 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012379775012] -------------- START_SENDING ----------------------
+2020-05-22 00:03:17,751 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012379775012] 12/18 - 51928817856: Sending message...
+2020-05-22 00:03:24,271 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012379775012] 12/18 - 51928817856: Message sended.
+2020-05-22 00:03:24,272 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012379775012] Elapsed sending time: 6522 ms.
+2020-05-22 00:03:24,272 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012379775012] -------------- FINISH_SENDING ----------------------
+2020-05-22 00:03:24,272 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] 
+2020-05-22 00:03:24,272 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012380427213] -------------- START_SENDING ----------------------
+2020-05-22 00:03:24,273 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012380427213] 13/18 - 51966461384: Sending message...
+2020-05-22 00:03:30,769 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012380427213] 13/18 - 51966461384: Message sended.
+2020-05-22 00:03:30,769 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012380427213] Elapsed sending time: 6497 ms.
+2020-05-22 00:03:30,769 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012380427213] -------------- FINISH_SENDING ----------------------
+2020-05-22 00:03:30,769 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] 
+2020-05-22 00:03:30,769 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012381076914] -------------- START_SENDING ----------------------
+2020-05-22 00:03:30,770 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012381076914] 14/18 - 51994768722: Sending message...
+2020-05-22 00:03:37,261 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012381076914] 14/18 - 51994768722: Message sended.
+2020-05-22 00:03:37,261 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012381076914] Elapsed sending time: 6492 ms.
+2020-05-22 00:03:37,261 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012381076914] -------------- FINISH_SENDING ----------------------
+2020-05-22 00:03:37,262 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] 
+2020-05-22 00:03:37,262 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012381726215] -------------- START_SENDING ----------------------
+2020-05-22 00:03:37,262 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012381726215] 15/18 - 51935334834: Sending message...
+2020-05-22 00:03:43,970 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012381726215] 15/18 - 51935334834: Message sended.
+2020-05-22 00:03:43,970 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012381726215] Elapsed sending time: 6708 ms.
+2020-05-22 00:03:43,970 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012381726215] -------------- FINISH_SENDING ----------------------
+2020-05-22 00:03:43,971 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] 
+2020-05-22 00:03:43,971 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012382397116] -------------- START_SENDING ----------------------
+2020-05-22 00:03:43,971 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012382397116] 16/18 - 51989946721: Sending message...
+2020-05-22 00:03:50,356 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012382397116] 16/18 - 51989946721: Message sended.
+2020-05-22 00:03:50,360 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012382397116] Elapsed sending time: 6389 ms.
+2020-05-22 00:03:50,360 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012382397116] -------------- FINISH_SENDING ----------------------
+2020-05-22 00:03:50,360 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] 
+2020-05-22 00:03:50,361 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012383036117] -------------- START_SENDING ----------------------
+2020-05-22 00:03:50,361 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012383036117] 17/18 - 51988908809: Sending message...
+2020-05-22 00:04:01,531 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012383036117] 17/18 - 51988908809: Message sended.
+2020-05-22 00:04:01,531 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012383036117] Elapsed sending time: 11170 ms.
+2020-05-22 00:04:01,531 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012383036117] -------------- FINISH_SENDING ----------------------
+2020-05-22 00:04:01,531 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] 
+2020-05-22 00:04:01,531 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012384153118] -------------- START_SENDING ----------------------
+2020-05-22 00:04:01,532 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012384153118] 18/18 - 51935334834: Sending message...
+2020-05-22 00:04:10,301 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012384153118] 18/18 - 51935334834: Message sended.
+2020-05-22 00:04:10,301 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012384153118] Elapsed sending time: 8770 ms.
+2020-05-22 00:04:10,301 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] [159012384153118] -------------- FINISH_SENDING ----------------------
+2020-05-22 00:04:10,301 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] 
+2020-05-22 00:04:10,301 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] closeAllWindows
+2020-05-22 00:04:11,229 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] 
+2020-05-22 00:04:11,230 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] Statistics:
+2020-05-22 00:04:11,230 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] Number of numbers: 18
+2020-05-22 00:04:11,230 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] Number of processed numbers: 17
+2020-05-22 00:04:11,230 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] Number of unprocessed numbers: 1
+2020-05-22 00:04:11,231 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] Invalid numbers: 51980630766,
+2020-05-22 00:04:11,231 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] 
+2020-05-22 00:04:11,231 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] Elapsed total time: 391863 ms.
+2020-05-22 00:04:11,231 INFO com.jeanramal.autosendmsgwhatsapp.service.SendMsgWhatsAppService [restartedMain] [15901234593690] -------------- FINISH_PROCESS -------------------------------------
