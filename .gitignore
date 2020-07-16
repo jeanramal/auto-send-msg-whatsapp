@@ -31,5 +31,6 @@ build/
 .vscode/
 
 
-auto-send-msg-whatsapp.7z
+*.7z
+*.zip
 logs/
