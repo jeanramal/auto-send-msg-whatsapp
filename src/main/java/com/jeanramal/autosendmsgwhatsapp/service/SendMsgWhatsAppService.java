@@ -93,7 +93,9 @@ public class SendMsgWhatsAppService {
 			    	
 			    	log.info(loadTrazabilidad + feedback + " - " + number + ": Sending message...");
 			    	
+			    	log.info(loadTrazabilidad + feedback + " - " + number + ": Loading Page...");
 			    	driver.get("https://web.whatsapp.com/send?phone=" + number + "&text=" + message);
+			    	log.info(loadTrazabilidad + feedback + " - " + number + ": Page loaded.");
 			    	
 				    while(!existsElement(By.cssSelector("span[data-icon='send']"))) {
 						Thread.sleep(1000);
@@ -112,7 +114,7 @@ public class SendMsgWhatsAppService {
 					current++;
 					numberProcessedNumbers++;
 					
-					Thread.sleep(1500);
+					Thread.sleep(5000);
 					
 					log.info(loadTrazabilidad + feedback + " - " + number + ": Message sended.");
 					
@@ -152,6 +154,7 @@ public class SendMsgWhatsAppService {
 			log.info(trazabilidad + "");
 			log.info(trazabilidad + "Elapsed total time: " + (System.currentTimeMillis() - timeStart) + " ms.");
 			log.info(trazabilidad + "-------------- FINISH_PROCESS -------------------------------------");
+			log.info("");
 		}
 	}
 
