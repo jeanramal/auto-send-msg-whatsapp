@@ -53,14 +53,14 @@ public class SendMsgWhatsAppService {
 			
 			
 			log.info(trazabilidad + "Waiting scanning...");
-			while(existsElement(By.className("_11ozL"))) {
+			while(existsElement(By.cssSelector("canvas[aria-label='Scan me!']"))) {
 				Thread.sleep(1000);
 			}
 			log.info(trazabilidad + "Scanned.");
 			
 			
 			log.info(trazabilidad + "Waiting connection...");
-			while(!existsElement(By.className("P8cO8"))) {
+			while(!existsElement(By.cssSelector("div[data-asset-intro-image-light='true']"))) {
 				Thread.sleep(1000);
 			}
 			log.info(trazabilidad + "Connected.");
@@ -95,18 +95,19 @@ public class SendMsgWhatsAppService {
 			    	
 			    	driver.get("https://web.whatsapp.com/send?phone=" + number + "&text=" + message);
 			    	
-				    while(!existsElement(By.className("_35EW6"))) {
+				    while(!existsElement(By.cssSelector("span[data-icon='send']"))) {
 						Thread.sleep(1000);
-						
+						/*
 						if(existsElement(By.className("_1CnF3")) 
 						   || existsElement(By.className("_3lLzD"))
 						   || existsElement(By.className("P8cO8"))
 						   ){
 							throw new Exception("Invalid number", new Throwable("InvalidNumberException"));
 						}
+						*/
 					}
 					
-					//driver.findElement(By.className("_35EW6")).click();
+					driver.findElement(By.cssSelector("span[data-icon='send']")).click();
 					
 					current++;
 					numberProcessedNumbers++;
