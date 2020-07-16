@@ -16,5 +16,4 @@ public class Parameters {
 	
 	private String message;
 
-
 }
