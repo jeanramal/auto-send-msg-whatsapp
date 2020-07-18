@@ -2,9 +2,11 @@ package com.jeanramal.autosendmsgwhatsapp.service;
 
 import java.util.ArrayList;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -97,26 +99,46 @@ public class SendMsgWhatsAppService {
 			    	driver.get("https://web.whatsapp.com/send?phone=" + number + "&text=" + message);
 			    	log.info(loadTrazabilidad + feedback + " - " + number + ": Page loaded.");
 			    	
-				    while(!existsElement(By.cssSelector("span[data-icon='send']"))) {
-						Thread.sleep(1000);
-						/*
-						if(existsElement(By.className("_1CnF3")) 
-						   || existsElement(By.className("_3lLzD"))
-						   || existsElement(By.className("P8cO8"))
-						   ){
-							throw new Exception("Invalid number", new Throwable("InvalidNumberException"));
+			    	try {
+				    	while(!existsElement(By.cssSelector("span[data-icon='send']"))) {
+							Thread.sleep(1000);
+							
+							if(existsElement(By.cssSelector("div[data-animate-modal-popup='true']"))){
+								
+								String text = driver.findElement(By.cssSelector("div[data-animate-modal-body='true'] > div:first-child")).getText();
+								
+								throw new Exception(text, new Throwable("InvalidRequestException"));
+							}
+							
 						}
-						*/
+			    	}catch (UnhandledAlertException e) {
+			    		Alert alert = this.driver.switchTo().alert();
+			            if (alert != null){
+			              alert.accept();
+			            }
+			            while(!existsElement(By.cssSelector("span[data-icon='send']"))) {
+							Thread.sleep(1000);
+							
+							if(existsElement(By.cssSelector("div[data-animate-modal-popup='true']"))){
+								
+								String text = driver.findElement(By.cssSelector("div[data-animate-modal-body='true'] > div:first-child")).getText();
+								
+								throw new Exception(text, new Throwable("InvalidRequestException"));
+							}
+							
+						}
 					}
 					
+				    Thread.sleep(1000);
+				    
+				    log.info(loadTrazabilidad + feedback + " - " + number + ": Sending message...");
 					driver.findElement(By.cssSelector("span[data-icon='send']")).click();
+					log.info(loadTrazabilidad + feedback + " - " + number + ": Message sended.");
+					
+					Thread.sleep(1000);
 					
 					current++;
 					numberProcessedNumbers++;
-					
-					Thread.sleep(5000);
-					
-					log.info(loadTrazabilidad + feedback + " - " + number + ": Message sended.");
 					
 		    	} catch (Exception e) {
 		    		current++;
