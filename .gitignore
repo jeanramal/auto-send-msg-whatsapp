@@ -34,3 +34,5 @@ build/
 *.7z
 *.zip
 logs/
+application.yml
+logback-spring.xml
