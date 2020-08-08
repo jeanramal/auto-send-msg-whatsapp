@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
@@ -33,11 +34,12 @@ public class SendMsgWhatsAppService {
 		String transaccion = Util.getTransaccion();
 		String trazabilidad = "[" + transaccion + "] ";
 		
-		int numberNumbers = 0;
-		int numberProcessedNumbers = 0;
-		int numberUnprocessedNumbers = 0;
+		int quantityNumbers = 0;
+		int quantityProcessedNumbers = 0;
+		int quantityUnprocessedNumbers = 0;
+		int quantityInvalidNumbers = 0;
 		String invalidNumbers = "";
-		String numbersUnProcessed = "";
+		String unprocessedNumbers = "";
 		
 		log.info(trazabilidad + "-------------- START_PROCESS -------------------------------------");
 		log.info(trazabilidad + "Sending Message WhatsApp");
@@ -73,7 +75,7 @@ public class SendMsgWhatsAppService {
 		    String[] numbers = parameters.getNumbers().split(",");
 		    int current = 1;
 		    
-		    numberNumbers = numbers.length;
+		    quantityNumbers = numbers.length;
 		    
 		    String message = parameters.getMessage();
 
@@ -86,7 +88,7 @@ public class SendMsgWhatsAppService {
 				String loadTransaccion = Util.getTransaccion();
 				String loadTrazabilidad = trazabilidad + "[" + loadTransaccion + "] ";
 		    	
-		    	String feedback = current + "/" + numberNumbers;
+		    	String feedback = current + "/" + quantityNumbers;
 		    	
 		    	log.info(loadTrazabilidad + "-------------- START_SENDING ----------------------");
 		    	
@@ -110,8 +112,15 @@ public class SendMsgWhatsAppService {
 			    	
 			    	try {
 			    		
-			    		Thread.sleep(2000);
+			    		Thread.sleep(1000);
 			    		
+			    		try {
+				    		driver.switchTo().alert().accept();
+				    	}catch (NoAlertPresentException e) {
+				    	}
+			    		
+			    		//Thread.sleep(1000);
+			    					    					    		
 				    	while(!existsElement(By.cssSelector("span[data-icon='send']"))) {
 							//Thread.sleep(1000);
 							
@@ -123,15 +132,12 @@ public class SendMsgWhatsAppService {
 							}
 							
 						}
+				    	
 			    	}catch (UnhandledAlertException e) {
 			    		log.error("[UnhandledAlertException]");
 			    		
-			    		Thread.sleep(2000);
-			    		
-//			    		Alert alert = this.driver.switchTo().alert();
-//			            if (alert != null){
-//			              alert.accept();
-//			            }
+			    		Thread.sleep(1000);
+				    	
 			            while(!existsElement(By.cssSelector("span[data-icon='send']"))) {
 							//Thread.sleep(1000);
 							
@@ -151,10 +157,10 @@ public class SendMsgWhatsAppService {
 				    driver.findElement(By.cssSelector("span[data-icon='send']")).click();
 					log.info(loadTrazabilidad + feedback + " - " + number + ": Message sended.");
 					
-					//Thread.sleep(1000);
+					Thread.sleep(2000);
 					
 					current++;
-					numberProcessedNumbers++;
+					quantityProcessedNumbers++;
 					
 		    	} catch (InvalidNumber e) {
 		    		current++;
@@ -162,14 +168,14 @@ public class SendMsgWhatsAppService {
 		    		String cause = e == null?"null": (e.getCause()==null?"null": e.getCause().getMessage());
 		    		String mesanje = e == null?"null": (e.getMessage()==null?"null": e.getMessage());
 		    		log.error(loadTrazabilidad + feedback + " - " + number + ": [" + cause + "] - " + mesanje);
-		    		numberUnprocessedNumbers++;
+		    		quantityInvalidNumbers++;
 				} catch (Exception e) {
 		    		current++;
-		    		numbersUnProcessed += number + ",";
+		    		unprocessedNumbers += number + ",";
 		    		String cause = e == null?"null": (e.getCause()==null?"null": e.getCause().getMessage());
 		    		String mesanje = e == null?"null": (e.getMessage()==null?"null": e.getMessage());
 		    		log.error(loadTrazabilidad + feedback + " - " + number + ": [" + cause + "] - " + mesanje);
-		    		numberUnprocessedNumbers++;
+		    		quantityUnprocessedNumbers++;
 				} finally {
 					log.info(loadTrazabilidad + "Elapsed sending time: " + (System.currentTimeMillis() - loadTimeStart) + " ms.");
 					log.info(loadTrazabilidad + "-------------- FINISH_SENDING ----------------------");
@@ -191,11 +197,12 @@ public class SendMsgWhatsAppService {
 			
 			log.info(trazabilidad + "");
 			log.info(trazabilidad + "Statistics:");
-			log.info(trazabilidad + "Number of numbers: " + numberNumbers);
-			log.info(trazabilidad + "Number of processed numbers: " + numberProcessedNumbers);
-			log.info(trazabilidad + "Number of unprocessed numbers: " + numberUnprocessedNumbers);
+			log.info(trazabilidad + "Quantity of numbers: " + quantityNumbers);
+			log.info(trazabilidad + "Quantity of processed numbers: " + quantityProcessedNumbers);
+			log.info(trazabilidad + "Quantity of unprocessed numbers: " + quantityUnprocessedNumbers);
+			log.info(trazabilidad + "Quantity of invalid numbers: " + quantityInvalidNumbers);
+			log.info(trazabilidad + "Unprocessed numbers: " + unprocessedNumbers);
 			log.info(trazabilidad + "Invalid numbers: " + invalidNumbers);
-			log.info(trazabilidad + "Numbers unprocessed: " + numbersUnProcessed);
 			
 			log.info(trazabilidad + "");
 			log.info(trazabilidad + "Elapsed total time: " + (System.currentTimeMillis() - timeStart) + " ms.");
@@ -207,7 +214,7 @@ public class SendMsgWhatsAppService {
 	private void closeAllWindows(String trazabilidad) {
 		log.info(trazabilidad + "closeAllWindows");
 		try {
-			ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+			ArrayList<String> tabs = new ArrayList<> (driver.getWindowHandles());
 			for (String tab : tabs) {
 				driver.switchTo().window(tab).close();
 			}
@@ -220,7 +227,7 @@ public class SendMsgWhatsAppService {
 		log.info(trazabilidad + "createTab");
 		((JavascriptExecutor)driver).executeScript("window.open()");
 		
-		ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+		ArrayList<String> tabs = new ArrayList<> (driver.getWindowHandles());
 		driver.switchTo().window(tabs.get(tabs.size()-1));
 	}
 	
@@ -228,7 +235,6 @@ public class SendMsgWhatsAppService {
 		log.info(trazabilidad + "prepareDriver");
 		System.setProperty("webdriver.chrome.driver", pathDriver);
 		driver = new ChromeDriver();
-		System.out.println("timeouts: " + driver.manage().timeouts().toString());
 	}
 	
 	private boolean existsElement(By by) {
