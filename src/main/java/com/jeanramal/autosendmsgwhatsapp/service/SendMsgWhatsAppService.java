@@ -2,7 +2,6 @@ package com.jeanramal.autosendmsgwhatsapp.service;
 
 import java.util.ArrayList;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;
@@ -14,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.jeanramal.autosendmsgwhatsapp.bean.Parameters;
+import com.jeanramal.autosendmsgwhatsapp.util.InvalidNumber;
 import com.jeanramal.autosendmsgwhatsapp.util.Util;
 
 import lombok.extern.slf4j.Slf4j;
@@ -37,6 +37,7 @@ public class SendMsgWhatsAppService {
 		int numberProcessedNumbers = 0;
 		int numberUnprocessedNumbers = 0;
 		String invalidNumbers = "";
+		String numbersUnProcessed = "";
 		
 		log.info(trazabilidad + "-------------- START_PROCESS -------------------------------------");
 		log.info(trazabilidad + "Sending Message WhatsApp");
@@ -93,6 +94,14 @@ public class SendMsgWhatsAppService {
 		    		
 			    	number = number.trim();
 			    	
+			    	if(number.equals("")) {
+			    		throw new InvalidNumber("Invalid number. Empty", new Throwable("InvalidNumber"));
+			    	}
+			    	
+			    	if(number.length() < 7 || number.length() > 13) {
+			    		throw new InvalidNumber("Invalid number. length " + number.length(), new Throwable("InvalidNumber"));
+			    	}
+			    	
 			    	log.info(loadTrazabilidad + feedback + " - " + number + ": Sending message...");
 			    	
 			    	log.info(loadTrazabilidad + feedback + " - " + number + ": Loading Page...");
@@ -100,49 +109,63 @@ public class SendMsgWhatsAppService {
 			    	log.info(loadTrazabilidad + feedback + " - " + number + ": Page loaded.");
 			    	
 			    	try {
+			    		
+			    		Thread.sleep(2000);
+			    		
 				    	while(!existsElement(By.cssSelector("span[data-icon='send']"))) {
-							Thread.sleep(1000);
+							//Thread.sleep(1000);
 							
 							if(existsElement(By.cssSelector("div[data-animate-modal-popup='true']"))){
 								
 								String text = driver.findElement(By.cssSelector("div[data-animate-modal-body='true'] > div:first-child")).getText();
 								
-								throw new Exception(text, new Throwable("InvalidRequestException"));
+								throw new InvalidNumber(text, new Throwable("InvalidNumber"));
 							}
 							
 						}
 			    	}catch (UnhandledAlertException e) {
-			    		Alert alert = this.driver.switchTo().alert();
-			            if (alert != null){
-			              alert.accept();
-			            }
+			    		log.error("[UnhandledAlertException]");
+			    		
+			    		Thread.sleep(2000);
+			    		
+//			    		Alert alert = this.driver.switchTo().alert();
+//			            if (alert != null){
+//			              alert.accept();
+//			            }
 			            while(!existsElement(By.cssSelector("span[data-icon='send']"))) {
-							Thread.sleep(1000);
+							//Thread.sleep(1000);
 							
 							if(existsElement(By.cssSelector("div[data-animate-modal-popup='true']"))){
 								
 								String text = driver.findElement(By.cssSelector("div[data-animate-modal-body='true'] > div:first-child")).getText();
 								
-								throw new Exception(text, new Throwable("InvalidRequestException"));
+								throw new InvalidNumber(text, new Throwable("InvalidNumber"));
 							}
 							
 						}
 					}
 					
-				    Thread.sleep(1000);
+				    //Thread.sleep(1000);
 				    
 				    log.info(loadTrazabilidad + feedback + " - " + number + ": Sending message...");
-					driver.findElement(By.cssSelector("span[data-icon='send']")).click();
+				    driver.findElement(By.cssSelector("span[data-icon='send']")).click();
 					log.info(loadTrazabilidad + feedback + " - " + number + ": Message sended.");
 					
-					Thread.sleep(1000);
+					//Thread.sleep(1000);
 					
 					current++;
 					numberProcessedNumbers++;
 					
-		    	} catch (Exception e) {
+		    	} catch (InvalidNumber e) {
 		    		current++;
 		    		invalidNumbers += number + ",";
+		    		String cause = e == null?"null": (e.getCause()==null?"null": e.getCause().getMessage());
+		    		String mesanje = e == null?"null": (e.getMessage()==null?"null": e.getMessage());
+		    		log.error(loadTrazabilidad + feedback + " - " + number + ": [" + cause + "] - " + mesanje);
+		    		numberUnprocessedNumbers++;
+				} catch (Exception e) {
+		    		current++;
+		    		numbersUnProcessed += number + ",";
 		    		String cause = e == null?"null": (e.getCause()==null?"null": e.getCause().getMessage());
 		    		String mesanje = e == null?"null": (e.getMessage()==null?"null": e.getMessage());
 		    		log.error(loadTrazabilidad + feedback + " - " + number + ": [" + cause + "] - " + mesanje);
@@ -172,6 +195,7 @@ public class SendMsgWhatsAppService {
 			log.info(trazabilidad + "Number of processed numbers: " + numberProcessedNumbers);
 			log.info(trazabilidad + "Number of unprocessed numbers: " + numberUnprocessedNumbers);
 			log.info(trazabilidad + "Invalid numbers: " + invalidNumbers);
+			log.info(trazabilidad + "Numbers unprocessed: " + numbersUnProcessed);
 			
 			log.info(trazabilidad + "");
 			log.info(trazabilidad + "Elapsed total time: " + (System.currentTimeMillis() - timeStart) + " ms.");
@@ -203,7 +227,8 @@ public class SendMsgWhatsAppService {
 	private void prepareDriver(String trazabilidad, String pathDriver) {
 		log.info(trazabilidad + "prepareDriver");
 		System.setProperty("webdriver.chrome.driver", pathDriver);
-		this.driver = new ChromeDriver();
+		driver = new ChromeDriver();
+		System.out.println("timeouts: " + driver.manage().timeouts().toString());
 	}
 	
 	private boolean existsElement(By by) {
