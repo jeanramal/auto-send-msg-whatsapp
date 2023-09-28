@@ -1,4 +1,4 @@
 parameters:
-  pathDriver: 'target/chromedriver/83.0.4103.39/chromedriver_win32/chromedriver.exe'
-  numbers: '51980630766,51980630766'
-  message: 'Mensaje'
+  pathDriver: 'target/chromedriver/latest/chromedriver_win32/chromedriver.exe'
+  numbers: '5511984260140,51910567774,56959784234,51940423847,573185225221,5219515256345,51944907118,51992788739,51935621173,51936047778,51997734117'
+  message: 'Únete al grupo de ex alumnos de CODEARTI para recibir noticias, descuentos y sorteos de nuestros cursos: https://chat.whatsapp.com/LuOBPadZhUrHYJqR6DBseU'

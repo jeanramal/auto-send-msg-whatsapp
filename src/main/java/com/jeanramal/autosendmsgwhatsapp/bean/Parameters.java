@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 @Component
-@ConfigurationProperties("parameters")
+@ConfigurationProperties(prefix = "parameters")
 public class Parameters {
 	
 	private String pathDriver;

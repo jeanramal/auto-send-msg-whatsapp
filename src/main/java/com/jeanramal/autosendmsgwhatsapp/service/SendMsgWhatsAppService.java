@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import com.jeanramal.autosendmsgwhatsapp.bean.Parameters;
 import com.jeanramal.autosendmsgwhatsapp.util.Util;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -60,7 +61,7 @@ public class SendMsgWhatsAppService {
 			
 			
 			log.info(trazabilidad + "Waiting connection...");
-			while(!existsElement(By.className("P8cO8"))) {
+			while(!existsElement(By.className("_64p9P"))) {//_64p9P//_1135V//_3SOOk//_3PwsU
 				Thread.sleep(1000);
 			}
 			log.info(trazabilidad + "Connected.");
@@ -95,9 +96,17 @@ public class SendMsgWhatsAppService {
 			    	
 			    	driver.get("https://web.whatsapp.com/send?phone=" + number + "&text=" + message);
 			    	
-				    while(!existsElement(By.className("_35EW6"))) {
+				    while(!existsElement(By.className("epia9gcq"))) {//_2xy_p _3XKXx//tvf2evcx oq44ahr5 lb5m6g5c svlsagor p2rjqpw5 epia9gcq
 						Thread.sleep(1000);
-						
+						if(existsElement(By.cssSelector("[role='dialog']"))) {
+							var text = driver.findElement(By.cssSelector("[role='dialog']"))
+							.findElement(By.tagName("div"))
+							.findElements(By.tagName("div"))
+							.get(0).getText();
+							if(!text.contains("chat") && !text.contains("Cancel")) {
+								throw new Exception(text, new Throwable("InvalidNumberException"));
+							}
+						}
 						if(existsElement(By.className("_1CnF3")) 
 						   || existsElement(By.className("_3lLzD"))
 						   || existsElement(By.className("P8cO8"))
@@ -106,7 +115,7 @@ public class SendMsgWhatsAppService {
 						}
 					}
 					
-					//driver.findElement(By.className("_35EW6")).click();
+					driver.findElement(By.className("epia9gcq")).click();
 					
 					current++;
 					numberProcessedNumbers++;
@@ -177,6 +186,7 @@ public class SendMsgWhatsAppService {
 	private void prepareDriver(String trazabilidad, String pathDriver) {
 		log.info(trazabilidad + "prepareDriver");
 		System.setProperty("webdriver.chrome.driver", pathDriver);
+		WebDriverManager.chromedriver().setup();
 		this.driver = new ChromeDriver();
 	}
 	
