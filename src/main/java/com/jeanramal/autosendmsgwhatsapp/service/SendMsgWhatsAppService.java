@@ -96,6 +96,8 @@ public class SendMsgWhatsAppService {
 			    	
 			    	driver.get("https://web.whatsapp.com/send?phone=" + number + "&text=" + message);
 			    	
+			    	//Thread.sleep(1000);
+			    	
 				    while(!existsElement(By.className("epia9gcq"))) {//_2xy_p _3XKXx//tvf2evcx oq44ahr5 lb5m6g5c svlsagor p2rjqpw5 epia9gcq
 						Thread.sleep(1000);
 						if(existsElement(By.cssSelector("[role='dialog']"))) {
@@ -103,16 +105,18 @@ public class SendMsgWhatsAppService {
 							.findElement(By.tagName("div"))
 							.findElements(By.tagName("div"))
 							.get(0).getText();
-							if(!text.contains("chat") && !text.contains("Cancel")) {
+							if(!text.contains("chat") && !text.contains("Cancel") && !text.isEmpty()) {
 								throw new Exception(text, new Throwable("InvalidNumberException"));
 							}
 						}
+						/*
 						if(existsElement(By.className("_1CnF3")) 
 						   || existsElement(By.className("_3lLzD"))
 						   || existsElement(By.className("P8cO8"))
 						   ){
 							throw new Exception("Invalid number", new Throwable("InvalidNumberException"));
 						}
+						*/
 					}
 					
 					driver.findElement(By.className("epia9gcq")).click();
